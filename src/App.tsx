@@ -1,12 +1,10 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import { MainProvider } from "./providers/MainProvider";
+import { MainRoutes } from "./routes";
 
-function App() {
-  const [count, setCount] = useState(0);
-
-  return <div className="App">App1</div>;
+export default function App() {
+  return (
+    <MainProvider>
+      <MainRoutes />
+    </MainProvider>
+  );
 }
-
-export default App;
