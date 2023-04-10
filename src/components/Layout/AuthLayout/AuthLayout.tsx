@@ -5,13 +5,8 @@ import {
   LeftBlock,
   RightBlock,
   TitleParaGraph,
-  DescParaGraph,
   ParaGraphBlock,
-  SelectLngWrapper,
-  SelectLng,
-  AuthFooter,
-  AuthHeader,
-  SelectLngDivider,
+  Triangle,
 } from "./styles";
 
 type AuthLayoutProps = {
@@ -19,18 +14,19 @@ type AuthLayoutProps = {
 };
 
 export default function AuthLayout({ children }: AuthLayoutProps) {
-  // const { isKO, isEN, changeLng } = useLanguage();
-
   return (
     <ResponsiveBlock>
       <LeftBlock>
         <ParaGraphBlock>
-          <DescParaGraph>상세</DescParaGraph>
+          <TitleParaGraph>Welcome to</TitleParaGraph>
         </ParaGraphBlock>
+        <Triangle />
       </LeftBlock>
       <RightBlock>
         <div>{children}</div>
-        <AuthFooter>footer</AuthFooter>
+        {/* <FooterBlock>
+          <Footer isPrivate={false} />
+        </FooterBlock> */}
       </RightBlock>
     </ResponsiveBlock>
   );
