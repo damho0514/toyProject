@@ -1,13 +1,16 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+/// <reference types="vite/client" />
+
 import path from "path";
 
-// https://vitejs.dev/config/
+import react from "@vitejs/plugin-react";
+import { visualizer } from "rollup-plugin-visualizer";
+import { defineConfig, PluginOption } from "vite";
+
 export default defineConfig({
+  plugins: [react(), visualizer({ emitFile: true }) as PluginOption],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      "@": path.resolve(__dirname, "src"),
     },
   },
-  plugins: [react()],
 });

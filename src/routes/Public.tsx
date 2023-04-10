@@ -24,7 +24,6 @@ export const publicRoutes = [
         element: <AuthRoutes />,
       },
       {
-        // path가 '/auth'일 경우 '/auth/signin'으로 redirect.
         path: "",
         element: <Navigate to="/login" />,
       },
