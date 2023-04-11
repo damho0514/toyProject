@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
 export const ResponsiveBlock = styled.div`
   width: 100%;
@@ -12,7 +12,7 @@ export const LeftBlock = styled.div`
   justify-content: center;
   align-items: center;
   left: 10%;
-  background-color: #212b44;
+  background-color: pink;
 `;
 
 export const RightBlock = styled.div`
@@ -20,7 +20,6 @@ export const RightBlock = styled.div`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  /* padding: 10px; */
 `;
 
 export const ParaGraphBlock = styled.div`

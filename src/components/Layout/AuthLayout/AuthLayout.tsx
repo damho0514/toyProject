@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 import {
   ResponsiveBlock,
@@ -7,7 +7,7 @@ import {
   TitleParaGraph,
   ParaGraphBlock,
   Triangle,
-} from "./styles";
+} from './styles';
 
 type AuthLayoutProps = {
   children: React.ReactNode;
@@ -16,17 +16,9 @@ type AuthLayoutProps = {
 export default function AuthLayout({ children }: AuthLayoutProps) {
   return (
     <ResponsiveBlock>
-      <LeftBlock>
-        <ParaGraphBlock>
-          <TitleParaGraph>Welcome to</TitleParaGraph>
-        </ParaGraphBlock>
-        <Triangle />
-      </LeftBlock>
+      <LeftBlock />
       <RightBlock>
         <div>{children}</div>
-        {/* <FooterBlock>
-          <Footer isPrivate={false} />
-        </FooterBlock> */}
       </RightBlock>
     </ResponsiveBlock>
   );

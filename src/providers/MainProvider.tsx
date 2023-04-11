@@ -2,12 +2,13 @@ import { queryClient } from '@/lib/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import theme from '@/styles/theme';
 import { ThemeProvider } from '@/styles/themed-components';
-import { Button, Spin } from 'antd';
+import { Button, ConfigProvider, Spin } from 'antd';
 import React, { Suspense } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { QueryClientProvider } from '@tanstack/react-query';
+import GlobalStyle from '@/styles/GlobalStyles';
 
 const ErrorFallback = () => {
   return (
@@ -31,14 +32,17 @@ export const MainProvider = ({ children }: MainProviderProps) => {
   return (
     <Suspense fallback={<Spin size="small" />}>
       <ErrorBoundary FallbackComponent={ErrorFallback}>
-        <HelmetProvider>
-          <ThemeProvider theme={theme}>
-            {/* {import.meta.env.NODE_ENV !== 'test' && <ReactQueryDevtools />} */}
-            <QueryClientProvider client={queryClient}>
-              <Router>{children}</Router>
-            </QueryClientProvider>
-          </ThemeProvider>
-        </HelmetProvider>
+        <GlobalStyle />
+        <ConfigProvider>
+          <HelmetProvider>
+            <ThemeProvider theme={theme}>
+              {/* {import.meta.env.NODE_ENV !== 'test' && <ReactQueryDevtools />} */}
+              <QueryClientProvider client={queryClient}>
+                <Router>{children}</Router>
+              </QueryClientProvider>
+            </ThemeProvider>
+          </HelmetProvider>
+        </ConfigProvider>
       </ErrorBoundary>
     </Suspense>
   );
