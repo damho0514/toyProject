@@ -2,6 +2,11 @@ const { default: axios } = require('axios');
 const express = require('express');
 const app = express();
 
+export const REST_API = 'ea0600db614d078c6b1ebb6048574da2';
+export const REDIRECT_URL = 'http://localhost:5173/oauth/callback/kakao';
+
+export const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API}&redirect_uri=${REDIRECT_URL}&response_type=code`;
+
 app.listen(5173, function () {
   console.log('liste');
 });
@@ -22,8 +27,8 @@ app.get('/api/auth/kakao', async (req, res) => {
           grant_type: 'authorization_code',
           client_id: CONFIG.KAKAO.RESTAPIKEY,
           code,
-          redirect_uri:
-            (CONFIG.PRODUCT ? 'https://' : 'http://') + req.headers.host + '/api/auth/kakao',
+          // redirect_uri:
+          //   (CONFIG.PRODUCT ? 'https://' : 'http://') + req.headers.host + '/api/auth/kakao',
         },
       }
     );
