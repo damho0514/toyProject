@@ -5,9 +5,10 @@ import { publicRoutes } from './Public';
 
 export const MainRoutes = () => {
   const user = useUser();
-  console.log('user', user);
-  const redirect = [{ path: '/', element: <Navigate to="/login" /> }];
 
-  const element = useRoutes([...publicRoutes, ...protectedRoutes, ...redirect]);
+  const redirect = [{ path: '/', element: <Navigate to="/login" /> }];
+  const routes = user.data ? publicRoutes : protectedRoutes;
+
+  const element = useRoutes([...routes, ...redirect]);
   return <>{element}</>;
 };

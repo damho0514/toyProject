@@ -1,5 +1,5 @@
-import { MainProvider } from "./providers/MainProvider";
-import { MainRoutes } from "./routes";
+import { MainProvider } from './providers/MainProvider';
+import { MainRoutes } from './routes';
 
 export default function App() {
   return (

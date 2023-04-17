@@ -1,5 +1,5 @@
-import React from "react";
+import { MainCard } from '@/components';
 
 export default function Home() {
-  return <div>home</div>;
+  return <MainCard />;
 }
