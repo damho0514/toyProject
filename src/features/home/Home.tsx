@@ -1,5 +1,10 @@
 import { MainCard } from '@/components';
+import SlidesCard from '@/components/SlidesCard/SlidesCard';
 
 export default function Home() {
-  return <MainCard />;
+  return (
+    <div>
+      <SlidesCard />;
+    </div>
+  );
 }
