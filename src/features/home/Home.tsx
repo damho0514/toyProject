@@ -1,5 +1,5 @@
-import { MainCard } from '@/components';
-import SlidesCard from '@/components/SlidesCard/SlidesCard';
+import { SlidesCard } from '@/components/SlidesCard';
+import React from 'react';
 
 export default function Home() {
   return (
